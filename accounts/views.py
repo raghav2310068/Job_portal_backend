@@ -72,5 +72,5 @@ class RegisterView(View):
         user_registration_form = UserForm(request.POST)
         if user_registration_form.is_valid():
             user_registration_form.save()
-            return HttpResponse("<h1>model saved</h1>")
-        return HttpResponse("<h1>model not saved</h1>")
+            return redirect("login")
+        return redirect("/")
